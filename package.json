@@ -1,0 +1,23 @@
+{
+    "name": "mcp-text-editor-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "tsc",
+        "start": "node build/text-editor-server.js /path/to/your/working/directory",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.11.0",
+        "zod": "^3.24.4"
+    },
+    "devDependencies": {
+        "typescript": "^5.8.3",
+        "@types/node": "^22.15.12"
+    }
+}
