@@ -204,6 +204,34 @@ Here are some example conversations to try with Claude:
 -   "I need to refactor this code to use async/await. Can you help?"
 -   "Create a config file with the following settings..."
 
+## Usage Rules for Claude
+
+These rules help Claude determine when and how to use the text editor tool:
+
+```
+For ANY request involving viewing, editing, creating, or modifying files:
+
+1. When you need to view file content:
+   + Use the "view" command with the file path
+   + For large files, use view_range parameter to see specific sections
+
+2. When you need to edit existing files:
+   + First use "view" to see the current content
+   + For simple replacements, use "str_replace" with old_str and new_str
+   + For adding new content at a specific location, use "insert" with line_number and text
+
+3. When you need to create new files:
+   + Use "create" with path and content parameters
+   + If replacing an existing file, set overwrite to true
+
+4. If a user is unhappy with changes:
+   + Use "undo_edit" to revert the most recent change to a file
+
+Always confirm you've made the requested changes and summarize what you've done. When possible, show the relevant portions of the file before and after changes.
+```
+
+You can include these rules in your Claude prompts to help guide the model on when and how to use the text editor tool.
+
 ## Troubleshooting
 
 If you encounter issues:
